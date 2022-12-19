@@ -5,12 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>€ - Kn</title>
-
+    <link rel="stylesheet" href="numpad-dark.css" />
+    <script src="numpad.js"></script>
 </head>
 <body style="font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 2em; background-color:azure;">
     
     <div style="margin: 50px;">
-    <h3 style="color: rgb(12, 12, 99);">Tečaj = 7,6</h3>
+    <h3 style="color: rgb(12, 12, 99);">Tečaj = 7,7</h3>
     <div style="display: flex; flex-direction: column;">
         <input type="text" name="iznos" id="iznos" style="margin: 15px 5px; border-radius: 10px; font-size: 1.6em; color: rgb(12, 12, 99); padding: 5px 10px; border-color: rgb(120, 202, 202);">
         <div style="display: flex; justify-content:space-between;">
@@ -23,15 +24,21 @@
     <script>
         function kne() {
             const iznos = document.getElementById("iznos").value;
-            const eu = parseFloat(iznos / 7.6).toLocaleString('hr');
+            const eu = parseFloat(iznos / 7.7).toLocaleString('hr');
             document.write("<span style=\"color:red; font-family: Verdana, Tahoma, sans-serif; font-size: 1.1em; margin: 10px; \">" + parseFloat(iznos).toLocaleString('hr') + " Kn<\/span><br><span style=\"color:darkslategray; font-family: Verdana, Tahoma, sans-serif; font-size: 2em; font-weight: bold; margin: 30px 15px; \"> = " + eu + "  € <\/span>");
            
         } 
         function ekn() {
             const iznos = document.getElementById("iznos").value;
-            const kn = parseFloat(iznos * 7.6).toLocaleString('hr');
+            const kn = parseFloat(iznos * 7.7).toLocaleString('hr');
             document.write ("<span style=\"color:red; font-family: Verdana, Tahoma, sans-serif; font-size: 1.1em; margin: 10px; \">" + parseFloat(iznos).toLocaleString('hr') + " €<\/span><br><span style=\"color:blue; font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 2em; font-weight: bold; margin: 30px 15px; \"> = "+ kn +"  Kn <\/span>");
         }
+    </script>
+    <script>
+        window.addEventListener("load", () => {
+            // (C1) BASIC NUMPAD
+            numpad.attach({ target: document.getElementById("iznos") });
+        });
     </script>
     <footer style="display: flex; align-items: flex-end; justify-content: center;">
         <p style="color:rgb(37, 37, 155); font-size: small; margin-top: 12vw;">&#169;VIDEONADZOR - Casino Cezar</p>
